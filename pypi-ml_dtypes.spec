@@ -4,13 +4,13 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-ml_dtypes
-Version  : 0.0.4
-Release  : 1
-URL      : https://files.pythonhosted.org/packages/dd/a2/5f274542c5fa4a50fa1d423927e7d3bd3e5b5777cc920a7104d1114382d9/ml_dtypes-0.0.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/dd/a2/5f274542c5fa4a50fa1d423927e7d3bd3e5b5777cc920a7104d1114382d9/ml_dtypes-0.0.4.tar.gz
+Version  : 0.1.0
+Release  : 2
+URL      : https://files.pythonhosted.org/packages/e8/7e/355b8db0651a2fe74437b578db1afc965b88bedd2116a83308bd7b91af43/ml_dtypes-0.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/e8/7e/355b8db0651a2fe74437b578db1afc965b88bedd2116a83308bd7b91af43/ml_dtypes-0.1.0.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0 MPL-2.0
+License  : Apache-2.0 MPL-2.0-no-copyleft-exception
 Requires: pypi-ml_dtypes-filemap = %{version}-%{release}
 Requires: pypi-ml_dtypes-lib = %{version}-%{release}
 Requires: pypi-ml_dtypes-license = %{version}-%{release}
@@ -77,10 +77,10 @@ python3 components for the pypi-ml_dtypes package.
 
 
 %prep
-%setup -q -n ml_dtypes-0.0.4
-cd %{_builddir}/ml_dtypes-0.0.4
+%setup -q -n ml_dtypes-0.1.0
+cd %{_builddir}/ml_dtypes-0.1.0
 pushd ..
-cp -a ml_dtypes-0.0.4 buildavx2
+cp -a ml_dtypes-0.1.0 buildavx2
 popd
 
 %build
@@ -88,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680184464
+export SOURCE_DATE_EPOCH=1681314018
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -113,8 +113,8 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-ml_dtypes
-cp %{_builddir}/ml_dtypes-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-ml_dtypes/1128f8f91104ba9ef98d37eea6523a888dcfa5de || :
-cp %{_builddir}/ml_dtypes-%{version}/LICENSE.eigen %{buildroot}/usr/share/package-licenses/pypi-ml_dtypes/8fcc05c0dd9d9c76e948120c9520e4cbe85fb527 || :
+cp %{_builddir}/ml_dtypes-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-ml_dtypes/2b8b815229aa8a61e483fb4ba0588b8b6c491890 || :
+cp %{_builddir}/ml_dtypes-%{version}/LICENSE.eigen %{buildroot}/usr/share/package-licenses/pypi-ml_dtypes/d7e3ed5ac149ac1e2d2e0f4daff081c1dafef1c0 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -142,8 +142,8 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/pypi-ml_dtypes/1128f8f91104ba9ef98d37eea6523a888dcfa5de
-/usr/share/package-licenses/pypi-ml_dtypes/8fcc05c0dd9d9c76e948120c9520e4cbe85fb527
+/usr/share/package-licenses/pypi-ml_dtypes/2b8b815229aa8a61e483fb4ba0588b8b6c491890
+/usr/share/package-licenses/pypi-ml_dtypes/d7e3ed5ac149ac1e2d2e0f4daff081c1dafef1c0
 
 %files python
 %defattr(-,root,root,-)
