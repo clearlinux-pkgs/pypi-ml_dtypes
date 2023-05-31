@@ -5,7 +5,7 @@
 #
 Name     : pypi-ml_dtypes
 Version  : 0.1.0
-Release  : 3
+Release  : 4
 URL      : https://files.pythonhosted.org/packages/e8/7e/355b8db0651a2fe74437b578db1afc965b88bedd2116a83308bd7b91af43/ml_dtypes-0.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e8/7e/355b8db0651a2fe74437b578db1afc965b88bedd2116a83308bd7b91af43/ml_dtypes-0.1.0.tar.gz
 Summary  : No detailed summary available
@@ -17,6 +17,7 @@ Requires: pypi-ml_dtypes-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(numpy)
 BuildRequires : pypi(pybind11)
+BuildRequires : pypi(setuptools)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -67,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683041337
+export SOURCE_DATE_EPOCH=1685554863
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
