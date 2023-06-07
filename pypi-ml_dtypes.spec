@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-ml_dtypes
-Version  : 0.1.0
-Release  : 4
-URL      : https://files.pythonhosted.org/packages/e8/7e/355b8db0651a2fe74437b578db1afc965b88bedd2116a83308bd7b91af43/ml_dtypes-0.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/e8/7e/355b8db0651a2fe74437b578db1afc965b88bedd2116a83308bd7b91af43/ml_dtypes-0.1.0.tar.gz
+Version  : 0.2.0
+Release  : 5
+URL      : https://files.pythonhosted.org/packages/fa/47/09ca9556bf99cfe7ddf129a3423642bd482a27a717bf115090493fa42429/ml_dtypes-0.2.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/fa/47/09ca9556bf99cfe7ddf129a3423642bd482a27a717bf115090493fa42429/ml_dtypes-0.2.0.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 MPL-2.0-no-copyleft-exception
@@ -27,6 +27,16 @@ BuildRequires : pypi(setuptools)
 [![Unittests](https://github.com/jax-ml/ml_dtypes/actions/workflows/test.yml/badge.svg)](https://github.com/jax-ml/ml_dtypes/actions/workflows/test.yml)
 [![Wheel Build](https://github.com/jax-ml/ml_dtypes/actions/workflows/wheels.yml/badge.svg)](https://github.com/jax-ml/ml_dtypes/actions/workflows/wheels.yml)
 [![PyPI version](https://badge.fury.io/py/ml_dtypes.svg)](https://badge.fury.io/py/ml_dtypes)
+
+%package dev
+Summary: dev components for the pypi-ml_dtypes package.
+Group: Development
+Provides: pypi-ml_dtypes-devel = %{version}-%{release}
+Requires: pypi-ml_dtypes = %{version}-%{release}
+
+%description dev
+dev components for the pypi-ml_dtypes package.
+
 
 %package license
 Summary: license components for the pypi-ml_dtypes package.
@@ -57,10 +67,10 @@ python3 components for the pypi-ml_dtypes package.
 
 
 %prep
-%setup -q -n ml_dtypes-0.1.0
-cd %{_builddir}/ml_dtypes-0.1.0
+%setup -q -n ml_dtypes-0.2.0
+cd %{_builddir}/ml_dtypes-0.2.0
 pushd ..
-cp -a ml_dtypes-0.1.0 buildavx2
+cp -a ml_dtypes-0.2.0 buildavx2
 popd
 
 %build
@@ -68,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685554863
+export SOURCE_DATE_EPOCH=1686151182
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,6 +121,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files dev
+%defattr(-,root,root,-)
+/usr/lib/python3.11/site-packages/ml_dtypes/include/float8.h
 
 %files license
 %defattr(0644,root,root,0755)
