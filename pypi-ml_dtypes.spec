@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-ml_dtypes
-Version  : 0.3.0
-Release  : 6
-URL      : https://files.pythonhosted.org/packages/ff/2c/6ceba6ee9b60e4743ddc22c87f569b94925ed2a7ce9fe62a5698958e3d14/ml_dtypes-0.3.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ff/2c/6ceba6ee9b60e4743ddc22c87f569b94925ed2a7ce9fe62a5698958e3d14/ml_dtypes-0.3.0.tar.gz
+Version  : 0.3.1
+Release  : 7
+URL      : https://files.pythonhosted.org/packages/16/6e/9a7a51ee1ca24b8e92109128260c5aec8340c8fe5572e9ceecddae559abe/ml_dtypes-0.3.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/16/6e/9a7a51ee1ca24b8e92109128260c5aec8340c8fe5572e9ceecddae559abe/ml_dtypes-0.3.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 MPL-2.0-no-copyleft-exception
@@ -57,10 +57,10 @@ python3 components for the pypi-ml_dtypes package.
 
 
 %prep
-%setup -q -n ml_dtypes-0.3.0
-cd %{_builddir}/ml_dtypes-0.3.0
+%setup -q -n ml_dtypes-0.3.1
+cd %{_builddir}/ml_dtypes-0.3.1
 pushd ..
-cp -a ml_dtypes-0.3.0 buildavx2
+cp -a ml_dtypes-0.3.1 buildavx2
 popd
 
 %build
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1695224174
+export SOURCE_DATE_EPOCH=1695654575
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
