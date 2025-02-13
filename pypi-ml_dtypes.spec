@@ -7,7 +7,7 @@
 #
 Name     : pypi-ml_dtypes
 Version  : 0.5.1
-Release  : 15
+Release  : 16
 URL      : https://files.pythonhosted.org/packages/32/49/6e67c334872d2c114df3020e579f3718c333198f8312290e09ec0216703a/ml_dtypes-0.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/32/49/6e67c334872d2c114df3020e579f3718c333198f8312290e09ec0216703a/ml_dtypes-0.5.1.tar.gz
 Summary  : No detailed summary available
